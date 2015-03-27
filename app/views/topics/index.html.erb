@@ -1,12 +1,10 @@
 <h1>Topics#index</h1>
 <p>Find me in app/views/topics/index.html.erb</p>
 
-<%#=  for idx in @response.each do %>
-    <%#= @response[idx].title %>
-    <%#= t.teaser %>
-    <%#= t[1].link[0].__content__ %>
-<%# end %>
-<%= @response %>
-<!--<strong><%#= @response %></strong><br />-->
-<%#= @teaser_response.html_safe %>
-<%#= link_to 'Read on NPR.org', @link_response %>
+
+<% @responsie.each do |r|%>
+    <strong><%= r["title"] %></strong><br />
+    <%= r["teaser"].html_safe %><br />
+    <%= link_to "read on NPR.org", r["link"][0]["__content__"] %><br /><br/>
+<% end %>
+
