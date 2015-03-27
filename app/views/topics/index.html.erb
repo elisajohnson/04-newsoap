@@ -2,9 +2,7 @@
 <p>Find me in app/views/topics/index.html.erb</p>
 
 
-<% @responsie.each do |r|%>
-    <strong><%= r["title"] %></strong><br />
-    <%= r["teaser"].html_safe %><br />
-    <%= link_to "read on NPR.org", r["link"][0]["__content__"] %><br /><br/>
+<% @topics.each do |t| %>
+  <%= t.name %><br />
 <% end %>
 

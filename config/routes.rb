@@ -9,12 +9,14 @@ Rails.application.routes.draw do
 
   get 'topics/destroy'
 
+  get 'topics/dashboard'
+
   get 'users/index'
 
   # devise_for :users
   devise_for :users, controllers: { sessions: "users/sessions" }
   resources :users
-  resources :topics
+  # resources :topics
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
