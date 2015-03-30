@@ -2,7 +2,7 @@
 <p>Find me in app/views/topics/index.html.erb</p>
 
 
-<% @topics.each do |t| %>
-  <%= t.name %><br />
+<% @topics.each do |n| %>
+  <%= check_box_tag :topics, n.name %>
+      <%= n.name %> <br />
 <% end %>
-
