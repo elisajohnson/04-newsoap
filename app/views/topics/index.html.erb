@@ -3,6 +3,8 @@
 
 
 <% @topics.each do |n| %>
-  <%= check_box_tag :topics, n.name %>
+    <%= check_box_tag n.npr_id, n.name %>
+  <%#= check_box_tag "topics[#{topic.name}]",1, if params["topics"]; params[:topics].include?(topic) else return true end %>
+
       <%= n.name %> <br />
 <% end %>
