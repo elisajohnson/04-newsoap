@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 'users/index'
 
+  post 'users/update'
+
   # devise_for :users
   devise_for :users, controllers: { sessions: "users/sessions" }
   resources :users

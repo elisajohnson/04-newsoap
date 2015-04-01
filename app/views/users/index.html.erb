@@ -1,2 +1,16 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+<%#= debug @topics %>
+<%#= fields_for @topics do |form|%>
+    <%#= form.check_box :topics %>
+    <%#= f.label 'topic' %>
+<%# end %>
+<%= [@topic][1].inspect %><br />
+<%= debug @topic %>
+<%= debug params[:topic] %>
+
+<% @topics.each do |n| %>
+    <%= check_box_tag n.npr_id, value = n.is_checked %>
+    <%= n.name %> <br />
+<% end %>
+<%= button_to "Save Changes", controller: "users", action: "update" %>

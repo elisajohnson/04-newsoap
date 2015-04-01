@@ -20,8 +20,9 @@ class TopicsController < ApplicationController
   end
 
   def create
+    @topics = Topic.all
     @topic = Topic.where(id: params[:topic_id])
-    if @topic.is_checked == true && current_user != nil
+    if @topic.checked && current_user != nil
       current_user.npr_id.push(@topic.npr_id)
       current_user.save
           redirect_to topics_dashboard_path
@@ -45,6 +46,6 @@ class TopicsController < ApplicationController
 
 private
   def topic_params
-    params.require(:topic).permit(:name, :npr_id, :is_checked)
+    params.require(:topic).permit(:topic_id, :name, :npr_id, :is_checked)
   end
 end
