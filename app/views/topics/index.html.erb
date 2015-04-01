@@ -2,9 +2,26 @@
 <p>Find me in app/views/topics/index.html.erb</p>
 
 
-<% @topics.each do |n| %>
-    <%= check_box_tag n.npr_id, n.name %>
+<%# form_for @topics do |f| %>
+    <%#= check_box_tag :is_checked, :class =>'topics' %>
+    <%#= f.check_box :is_checked %>
   <%#= check_box_tag "topics[#{topic.name}]",1, if params["topics"]; params[:topics].include?(topic) else return true end %>
+    <%#= f.label {f.name} %>
+    <%# if :topics == true%>
+        <%# @query = f.npr_id %>
+        <%# HTTParty.get(@base_url+@query+@access_token)['nprml']['list']['story'] %>
+    <%# end %>
+<%# end %>
+<%#= submit_tag "create" %>
 
-      <%= n.name %> <br />
+<%# form_for @topics do |f|%>
+    <%#= f.name %>
+    <%#= f.label 'topic' %>
+<%# end %>
+
+<%#= debug current_user %>
+<% @topics.each do |n| %>
+    <%= check_box_tag n.npr_id, value = n.is_checked %>
+    <%= n.name %> <br />
 <% end %>
+<%= button_to "Save Changes", controller: "topics", action: "create" %>
