@@ -27,6 +27,8 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+   <%= f.collection_check_boxes(:topic_ids, Topic.all, :id, :name) %><br />
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -3,5 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :topics
+  has_many :user_topics
+  has_many :topics, :through => :user_topics
+  accepts_nested_attributes_for :user_topics
+  accepts_nested_attributes_for :topics
 end
