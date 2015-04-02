@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'skrollr-rails'
+
 gem 'httparty', '0.11.0'
 
 gem 'figaro'

@@ -1,2 +1,69 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<body>
+<!--<div id="header" data-top="transform[bounce];" data-100="transform[bounce];">-->
+ <!--<img src="/assets/image.jpg" alt="">-->
+<!--</div>-->
+
+
+<div
+class="parallax-image-wrapper parallax-image-wrapper-100"
+data-anchor-target="#dragons + .gap"
+data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+  <div
+  class="parallax-image parallax-image-100"
+  style="background-image:url(assets/image.jpg)"
+  data-anchor-target="#dragons + .gap"
+  data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+  data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+  >
+    <br/>
+    <br/>
+    <br/>
+    <br />
+    <br />
+    <br />
+    <h2> Newsoap: Simplify your news stream</h2>
+  </div>
+  <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+</div>
+
+  <div
+  class="parallax-image parallax-image-100"
+  style="background-image:url(assets/image.jpg)"
+  data-anchor-target="#bacons + .gap"
+  data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+  data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+  ></div>
+</div>
+
+
+
+<div id="skrollr-body">
+  <div class="header" id="dragons">
+  </div>
+  <div class="gap gap-100" style="background-image:url(assets/image.jpg);"></div>
+  <div class="content" id="bacons">
+    <br />
+    <br />
+    <br />
+    <hr />
+    <p class="app_desc">For people who want to simplify their news stream.  <p class="app_name"> Newsoap</p> is a filter for news articles that allows you to focus on what you want.
+    </p>
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+  <div class="gap gap-200" style="background-image:url(assets/image.jpg);">
+  </div>
+</div>
+
+
+<script type="text/javascript" src="skrollr.min.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+</body>
