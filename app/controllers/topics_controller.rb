@@ -7,16 +7,11 @@ class TopicsController < ApplicationController
       @topics = Topic.all
     end
 
-    # @topic = Topic.new
-
     @base_url = 'http://api.npr.org/query?id='
-    # @query = :query.to_i
     @access_token = '&apiKey='+ENV['NPR_API_KEY']
-    #@responsie = HTTParty.get(@base_url+@query+@access_token)['nprml']['list']['story']
 
     # @response = HTTParty.get("http://api.npr.org/query?id=1137&apiKey=" + ENV['NPR_API_KEY'])['nprml']['list']
     # render json: @response
-    #   end
   end
 
   def create
@@ -38,10 +33,18 @@ class TopicsController < ApplicationController
   end
 
   def dashboard
-    @base_url = 'http://api.npr.org/query?'
-    @query = 'id=3004'
+    @user_topics = UserTopic.where(:user_id => current_user)
+
+    current_user.user_topics.each do |x|
+      @query = x.topic.npr_id.to_s
+    end
+    if @query.nil?
+      @topics = Topic.all
+    else
+    @base_url = 'http://api.npr.org/query?id='
     @access_token = '&apiKey='+ENV['NPR_API_KEY']
     @responsie = HTTParty.get(@base_url+@query+@access_token)['nprml']['list']['story']
+    end
   end
 
 private

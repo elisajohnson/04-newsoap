@@ -1,3 +1,4 @@
 class Topic < ActiveRecord::Base
-  belongs_to :user
+  has_many :user_topics
+  accepts_nested_attributes_for :user_topics
 end

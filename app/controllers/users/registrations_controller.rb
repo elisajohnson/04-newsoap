@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -18,9 +18,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    current_user.user_topics.destroy_all
+    params[:user][:topic_ids].each do |topic_id|
+      current_user.user_topics.create(topic_id: topic_id) if topic_id != ""
+    end
+    super
+#    current_user.update(params.require(:user).permit(:email, :password, :password_confirmation))
+  end
 
   # DELETE /resource
   # def destroy
@@ -44,9 +49,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # You can put the params you want to permit in the empty array.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.for(:account_update).push(:topic_ids)
+  end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

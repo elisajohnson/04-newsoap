@@ -1,14 +1,16 @@
 class UsersController < ApplicationController
   def index
-    @topic = Topic.where(id: params[:topic_id])
+    @topic = Topic.where(id: params[:id])
     @topics = Topic.all
     # @response = HTTParty.get("http://api.npr.org/query?id=1137&apiKey=" + ENV['NPR_API_KEY'])
     # render json: @response
   end
 
   def update
+    raise topic.inspect
     @topics = Topic.all
-    @topic = Topic.where(params[:id])
+    @topic = Topic.where(id: params[:id])
+    # @topic = Topic.all.map{|topic| topic.id}
     if @topic.value == true && current_user != nil
       current_user.npr_id.push(@topic.npr_id)
       current_user.save
@@ -20,7 +22,6 @@ class UsersController < ApplicationController
 
   private
   def topic_params
-    params.permit(:topic)
-    params.require(:topic).permit(:name, :npr_id, :is_checked)
+    params.require(:topic).permit(:name, :npr_id, :is_checked, id: [])
   end
 end

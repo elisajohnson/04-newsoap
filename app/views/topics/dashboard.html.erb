@@ -1,6 +1,10 @@
 <h1>Dashboard</h1>
-<% @responsie.each do |r|%>
+<% if @responsie.nil? %>
+<%= link_to "Add Topics", edit_user_registration_path %>
+<% else %>
+    <% @responsie.each do |r|%>
     <strong><%= r["title"] %></strong><br />
     <%= r["teaser"].html_safe %><br />
     <%= link_to "read on NPR.org", r["link"][0]["__content__"] %><br /><br/>
+    <% end %>
 <% end %>
