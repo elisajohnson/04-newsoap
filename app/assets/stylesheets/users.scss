@@ -1,3 +1,21 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#devise-fields {
+  background-color: grey;
+  text-align: left;
+}
+
+.h2 {
+  text-align: center;
+}
+
+#topic-fields {
+  display: inline-block;
+
+}
+
+.collection_check_boxes{
+  display: inline;
+  vertical-align: -5px;
+}
