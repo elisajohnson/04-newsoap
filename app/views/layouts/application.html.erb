@@ -4,25 +4,49 @@
   <title>Appnewsoap</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!--jQuery Library-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!--parallax library-->
+  <script src="/assets/parallax.min.js"></script>
+  <!--normalize CSS across browsers-->
+  <link rel="stylesheet" type="text/css" href="/assets/normalize/normalize.css">
+  <!--enable media queries-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--font-->
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-
-<% if user_signed_in? %>
-    <%= link_to "Dashboard", topics_dashboard_path %>
-    <%= link_to "Topics", edit_user_registration_path %> |
-    Hello <strong><%= current_user.email %></strong>.
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <%= link_to "Topics", edit_user_registration_path %>
-<% end %>
+<div class="container">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="row clearfix">
+    <div class="column third">
+          <% if user_signed_in? %>
+            <p id="nav_links_dash"><%= link_to "Dashboard", topics_dashboard_path %></p>
+    </div>
+    <div class="column third">
+            <p id="nav_links_topics"><%= link_to "Topics", edit_user_registration_path %></p>
+    </div>
+    <div class="column third">
+        <p id="nav_links_logout"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <strong><%= current_user.email %></strong></p>
+      <% else %>
+          <p class="nav_links"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></p> |
+          <p class="nav_links"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></p>
+      <% end %>
+    </div>
+  </div>
 
 <%= yield %>
+
+</div>
+
+
+
+
 
 </body>
 </html>

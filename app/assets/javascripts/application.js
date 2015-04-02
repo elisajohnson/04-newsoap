@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require skrollr
+//= require skrollr.ie
+//= require skrollr.menu
+//= require skrollr.stylesheets
 //= require turbolinks
 //= require_tree .
