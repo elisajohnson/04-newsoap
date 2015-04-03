@@ -1,13 +1,21 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.registration-container {
+  padding: 2%;
+  margin-bottom: 4%;
+  overflow: auto;
+  border-radius: .5%;
+}
+
 #devise-fields {
-  background-color: grey;
   text-align: left;
+  padding-top: 2%;
+  border-radius: .5%;
 }
 
 .h2 {
-  text-align: center;
+  text-align: left;
 }
 
 #topic-fields {
@@ -18,4 +26,30 @@
 .collection_check_boxes{
   display: inline;
   vertical-align: -5px;
+}
+
+.edit-title {
+  text-align: center;
+  padding-left: 0;
+}
+
+.sign-up-title {
+  text-align: left;
+  padding-left: 0;
+  padding-top: 3%;
+}
+
+.new-registration-container {
+  padding: 2%;
+  margin-bottom: 4%;
+  border-radius: .5%;
+  max-width: 35%;
+  position: relative;
+//  box-shadow: 5px 5px 2px #c0c0c0;
+}
+
+.log-in-title {
+  padding-left: 0;
+  padding-top: 4%;
+  text-align: left;
 }

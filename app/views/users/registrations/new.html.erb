@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<body class="new-user">
+<div class="column third" data-0="background-color:rgb(243,243,243);" data-900="background-color:rgb(155,155,155);">
+<h2 class="sign-up-title">Sign up</h2><br />
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -7,23 +9,33 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+  <br />
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password %> <br />
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
+  <br />
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <br />
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= f.submit "Sign up", class: 'button' %>
+  </div><br />
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>
+
+<script type="text/javascript" src="skrollr.min.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+</body>

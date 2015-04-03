@@ -53,7 +53,9 @@ html { font-size: 100%; }
     .column.full { width: 100%; }
     .column.two-thirds { width: 66.7%; }
     .column.half { width: 50%; }
-    .column.third { width: 33.3%; }
+    .column.third {
+        width: 33.3%;
+    }
     .column.fourth { width: 25%; }
     .column.flow-opposite { float: right; }
 }
@@ -75,6 +77,24 @@ html { font-size: 100%; }
 body {
     font-family: 'Droid Sans', sans-serif;
 }
+
+#nav-links1 {
+    text-align: center;
+}
+
+#nav-links2 {
+    text-align: center;
+}
+
+#nav-links3 {
+    text-align: center;
+}
+
+
+#non-user-links {
+    text-align: left;
+}
+
 
 
 

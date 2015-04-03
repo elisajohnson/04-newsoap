@@ -20,19 +20,21 @@
 
 </head>
 <body>
-<div class="container">
+<div id="nav-links" class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div class="row clearfix">
-    <div class="column third">
+    <div id="nav-links1" class="column third">
           <% if user_signed_in? %>
             <p id="nav_links_dash"><%= link_to "Dashboard", topics_dashboard_path %></p>
     </div>
-    <div class="column third">
+    <div id="nav-links2" class="column third">
             <p id="nav_links_topics"><%= link_to "Topics", edit_user_registration_path %></p>
     </div>
-    <div class="column third">
-        <p id="nav_links_logout"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <strong><%= current_user.email %></strong></p>
+    <div id="nav-links3" class="column third">
+        <p id="nav_links_logout"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> | <strong><%= current_user.email.split('@').first %></strong></p>
+    </div>
+    <div class="column">
       <% else %>
           <p class="nav_links"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></p> |
           <p class="nav_links"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></p>
