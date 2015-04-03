@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if request.referer == sign_in_url
       super
     else
-      stored_location_for(user) || request.referer || topics_path
+      stored_location_for(user) || request.referer || topics_dashboard_path
     end
   end
 end
