@@ -2,7 +2,7 @@
 
 #####Newsoap is a filter for news articles that allows you to focus on the news topics you want.
 
-**[Heroku]**(https://newsoap.herokuapp.com)
+**[Heroku](https://newsoap.herokuapp.com)**
 
 Built with: 
 * Ruby on Rails
