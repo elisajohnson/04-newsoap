@@ -14,4 +14,8 @@ Built with:
 
 Utlizing the NPR API.
 
+To Dos
+* Add real time news data analytic visualization
+* More styling 
+
 
