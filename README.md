@@ -10,6 +10,7 @@ Built with:
 * Devise gem
 * Brakeman gem
 * HTTParty gem
+* Skrollr gem
 
 Utlizing the NPR API.
 
