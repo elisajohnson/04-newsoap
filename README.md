@@ -1,8 +1,10 @@
-# 04-newsoap
+##Newsoap: Simplify your news stream
 
 #####Newsoap is a filter for news articles that allows you to focus on the news topics you want.
 
-Built with 
+[Heroku](https://newsoap.herokuapp.com)
+
+Built with: 
 * Ruby on Rails
 * Javascript
 * Devise gem
@@ -11,4 +13,4 @@ Built with
 
 Utlizing the NPR API.
 
-[Heroku](https://newsoap.herokuapp.com)
+
